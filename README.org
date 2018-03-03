@@ -21,11 +21,11 @@ proteus output sequences.
 - Basic usage: ~--align~ / ~--proteus~ / ~--fasta~ / ~--seq~ represents the format of the
   input file (must be set).
 #+begin_src bash
-python logo.py data.seq
-python logo.py data.aln --align
-python logo.py proteus.dat --proteus
-python logo.py proteus.dat --proteus -o proteus.png # will create a PNG proteus.png
-python logo.py data.seq --seq -pp 501 530 400 401 -pi 0 1 2 3 # the position name of the first 4 amino acids are 501 530 400
+logo data.seq
+logo data.aln --align
+logo proteus.dat --proteus
+logo proteus.dat --proteus -o proteus.png # will create a PNG proteus.png
+logo data.seq --seq -pp 501 530 400 401 -pi 0 1 2 3 # the position name of the first 4 amino acids are 501 530 400
 #+end_src
 
 - The script has a few optional arguments:
@@ -59,17 +59,28 @@ pip install pillow
 #+end_src
 
 * Installation
-In order to use this script, the following files (~logo.py~, ~color.dat~ and
-~DejaVuSansMono-Bold.ttf~) in the same directory. Thus, the script can be called
-from any other directory as follow:
+Install the logo package using the ~pip~ package manager.
+#+begin_src bash
+# Installation in logo directory
+pip install . --user
+
+# Upgrade installation
+pip install . --user --upgrade
+
+# Uninstall this package
+pip unsintall logo
+#+end_src
+
+~--user~ option will copy ~logo~ under ~~/.local/bin~. In order to make this
+binary available from anywhere, add the following line in your ~.bashrc~ or ~.bash_profile~.
 
 #+begin_src bash
-../../other_location/logo.py data.aln --align -o output --transparency --width 2000 --heigth 600 --rotate
+export PATH="/Users/vaiteaopuu/.local/bin:$PATH"
 #+end_src
 
 * Example
 #+begin_src bash
-./logo.py example/test_data.aln --align -o example/output.png -he 200 -wi 500 -pi $(seq 0 10) --transparency
+logo example/test_data.aln --align -o example/output.png -he 200 -wi 500 -pi $(seq 0 10) --transparency
 #+end_src
 
 [[./example/output.png]]

@@ -1,0 +1,4 @@
+include README.org
+include logo/data/*
+include logo/ttf/*
+include example/*

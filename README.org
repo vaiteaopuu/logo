@@ -75,7 +75,7 @@ pip unsintall logo
 binary available from anywhere, add the following line in your ~.bashrc~ or ~.bash_profile~.
 
 #+begin_src bash
-export PATH="/Users/vaiteaopuu/.local/bin:$PATH"
+export PATH="/Users/<user-name>/.local/bin:$PATH"
 #+end_src
 
 * Example
